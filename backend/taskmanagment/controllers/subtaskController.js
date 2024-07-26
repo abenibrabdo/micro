@@ -42,6 +42,14 @@ exports.updateSubtaskStatus = async (req, res) => {
     }
 };
 
+exports.getSubCount = async (req, res) => {
+    try {
+        const subtaskCount = await Subtask.countDocuments();
+        res.json({ count: subtaskCount });
+    } catch (error) {
+        res.status(500).json({ message: 'Error counting subtasks', error });
+    }
+}
 // Delete a subtask
 exports.deleteSubtask = async (req, res) => {
     try {

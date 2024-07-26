@@ -23,6 +23,14 @@ exports.getAllTasks = async (req, res) => {
         res.status(500).json({ message: error.message });
     }
 };
+exports.getCount =  async (req, res) => {
+    try {
+        const taskCount = await Task.countDocuments();
+        res.json({ count: taskCount });
+    } catch (error) {
+        res.status(500).json({ message: 'Error counting tasks', error });
+    }
+}
 
 // Update task status
 exports.updateTaskStatus = async (req, res) => {
