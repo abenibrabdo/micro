@@ -85,7 +85,7 @@ const [loading, setLoading] = useState(false)
     };
 
     return (
-        <div className="max-w-lg mx-auto p-6 bg-white rounded-lg shadow-md">
+        <div className="max-w-lg mx-auto p-6 bg-slate-200 rounded-lg shadow-md">
             <h2 className="text-2xl font-bold mb-4">Create Task</h2>
             <form onSubmit={handleCreateTask} className="space-y-4">
                 <input
