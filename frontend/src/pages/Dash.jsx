@@ -30,18 +30,18 @@ const Dashboard = () => {
     }, []);
 
     if (loading) {
-        return <div className="text-center text-xl"><Lottie animationData={loadingAnimation} height={200} width={150} /></div>;
+        return <div className="text-center h-[120px] w-[200px] text-xl"><Lottie animationData={loadingAnimation} height={100} width={150} /></div>;
     }
 
     return (
         <div className="flex flex-wrap justify-around p-5 bg-slate-200 min-h-screen *:text-xl">
             <div className="border max-h-[120px] border-green-300 p-5 rounded-lg w-48 shadow-md bg-gradient-to-r from-slate-500 *:text-white to-slate-800 flex flex-col gap-2 items-center">
                 <h3 className="text-lg font-semibold">Task Count</h3>
-                <p className="text-2xl">{taskCount}</p>
+                <p className="text-2xl">{taskCount > 0 ?  taskCount : 0}</p>
             </div>
             <div className="border max-h-[120px] bg-gradient-to-r from-fuchsia-500 to-cyan-500 *:text-white border-gray-300 p-5 rounded-lg w-48 shadow-md bg flex flex-col items-center">
                 <h3 className="text-lg font-semibold">Subtask Count</h3>
-                <p className="text-2xl">{subtaskCount}</p>
+                <p className="text-2xl">{subtaskCount > 0? subtaskCount : 0}</p>
             </div>
         </div>
     );
