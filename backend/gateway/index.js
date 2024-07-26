@@ -13,6 +13,7 @@ app.use(cors());
 
 app.use('/task', proxy('http://localhost:5000')); 
 app.use('/project', proxy('http://localhost:3001')); 
+app.use('/fasil', proxy('http://localhost:7000')); 
 app.use(expressStatusMonitor());
 
 
